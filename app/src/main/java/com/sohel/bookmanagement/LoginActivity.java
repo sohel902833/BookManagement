@@ -8,14 +8,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     TextInputLayout login_email_Input,login_password_Input;
-
     Button loginButton,registrationButton;
 
+    private FirebaseAuth mAuth;
+    private
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
