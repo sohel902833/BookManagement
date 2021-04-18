@@ -17,7 +17,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button loginButton,registrationButton;
 
     private FirebaseAuth mAuth;
-    private
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +43,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if (v.getId()==R.id.login_button_id)
-        {
 
+        switch (v.getId())
+        {
+            case R.id.login_button_id:
+
+                break;
+
+            case R.id.registration_button_id:
+                Intent intent=new Intent(LoginActivity.this,RegistrationActivity.class);
+                startActivity(intent);
+                break;
         }
 
-        if (v.getId()==R.id.registration_button_id)
-        {
-            Intent intent=new Intent(LoginActivity.this,RegistrationActivity.class);
-            startActivity(intent);
-        }
     }
 }
