@@ -16,8 +16,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextInputLayout login_email_Input,login_password_Input;
     Button loginButton,registrationButton;
 
-    private FirebaseAuth mAuth;
-    private
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
