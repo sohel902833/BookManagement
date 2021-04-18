@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -16,6 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.sohel.bookmanagement.Model.Users;
 
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +28,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     Button signUpButton;
     TextView reg_TextView_btn;
     private FirebaseAuth mAuth;
+    private DatabaseReference userRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_registration);
 
         mAuth = FirebaseAuth.getInstance();
+        userRef=FirebaseDatabase.getInstance().getReference("users");
 
 
         reg_name_inputText=findViewById(R.id.reg_name_id);
@@ -103,9 +111,37 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 
-                    Toast.makeText(RegistrationActivity.this, "Alhamdulillah Registration is Successful", Toast.LENGTH_SHORT).show();
+
+                    Users users=new Users("null",name,email,password);
+
+                    userRef.child(mAuth.getCurrentUser().getUid()).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            if (task.isSuccessful()){
+                                finish();
+                                Intent intent=new Intent(RegistrationActivity.this,LoginActivity.class);
+                                startActivity(intent);
+                            }
+
+                            else {
+                                Toast.makeText(RegistrationActivity.this, "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+
+
                 } else {
-                    Toast.makeText(RegistrationActivity.this, "Registration is not Successful", Toast.LENGTH_SHORT).show();
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException)
+                    {
+                        Toast.makeText(RegistrationActivity.this, "User is Already Registered", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(RegistrationActivity.this, "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
 
