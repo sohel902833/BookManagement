@@ -79,26 +79,38 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:backgroundTint="#B35656"
+
+
+                    android:background="@drawable/button"
                     android:layout_gravity="center"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:layout_marginTop="20dp"
                     android:text="Login"
-                    android:id="@+id/login_button_id"
-                    android:layout_marginBottom="100dp"
+                     android:id="@+id/login_button_id"
+                    android:layout_marginBottom="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </Button>
-
+                <ProgressBar
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/lprogressBar"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/purple_500"
+                    />
                 <TextView
                     android:layout_marginBottom="50px"
                     android:textColor="#1B0303"
                     android:textStyle="italic"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:id="@+id/register_textview_id"
-                    android:layout_marginTop="-40dp"
+                    android:layout_marginTop="10dp"
                     android:text="Don\'t Have An Account? "
                     android:gravity="center_horizontal"
                     android:layout_width="match_parent"
@@ -106,14 +118,17 @@
 
                 <Button
 
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:background="@drawable/button"
                     android:id="@+id/registration_button_id"
                     android:layout_marginBottom="20px"
                     android:layout_margin="20px"
                     android:padding="30px"
-                    android:text="REGISTRATION"
+                    android:text="Registration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-
             </LinearLayout>
 
 

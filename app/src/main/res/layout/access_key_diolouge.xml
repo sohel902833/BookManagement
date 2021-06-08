@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="25dp"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+
+        <EditText
+            android:id="@+id/tokenEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input"
+            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            android:hint="Token"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            />
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activeMaazineButton"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:text="Active Magazine"
+                android:padding="10dp"
+                />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Or"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="#000"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/requestTokenId"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:text="Request Token "
+            android:padding="10dp"
+            />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

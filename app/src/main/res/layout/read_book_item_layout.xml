@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        android:id="@+id/read_ImageViewid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <ImageView
+        android:src="@drawable/profile"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/read_ImageViewid2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+    <include
+        layout="@layout/app_ber_layout"
+        android:id="@+id/profileAppBarid"/>
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_below="@+id/profileAppBarid"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:civ_border_color="#000"
+        app:civ_border_width="2dp"
+        android:src="@drawable/profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/profile_UserProfileImage"
+        />
+     <LinearLayout
+         android:id="@+id/pl1"
+         android:layout_marginRight="20dp"
+         android:layout_marginLeft="20dp"
+         android:layout_marginTop="10dp"
+         android:layout_below="@+id/profile_UserProfileImage"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/profile_EmailTv"
+             android:text="email@gmail.com"
+             android:textSize="18sp"
+             android:textColor="#000"
+             android:textStyle="bold"
+             android:textAlignment="center"
+             />
+         <EditText
+             android:layout_marginTop="10dp"
+             android:padding="10dp"
+             android:background="@drawable/input"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/profile_nameEt"
+             android:hint="Name"
+             android:textSize="18sp"
+             android:textColor="#000"
+             android:textStyle="bold"
+             android:textAlignment="center"
+             />
+         <EditText
+             android:layout_marginTop="10dp"
+             android:padding="10dp"
+             android:background="@drawable/input"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/profile_phoneEt"
+             android:hint="Phone"
+             android:textSize="18sp"
+             android:textColor="#000"
+             android:textStyle="bold"
+             android:textAlignment="center"
+             />
+     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/profile_UIDTv"
+       android:drawablePadding="10dp"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:id="@+id/txt1"
+        android:layout_marginLeft="20dp"
+        android:text="Tap to copy your profile ID"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/updateDetailsButton"
+        android:layout_margin="20dp"
+        android:drawableLeft="@drawable/copy_icon"
+        android:drawablePadding="10dp"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:id="@+id/profile_UIDTv"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateDetailsButton"
+        android:layout_alignParentBottom="true"
+        android:padding="15dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn"
+        android:text="Update Details"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        />
+
+</RelativeLayout>

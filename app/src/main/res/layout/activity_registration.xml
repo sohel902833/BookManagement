@@ -76,6 +76,25 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
 
+                    android:layout_marginTop="10dp"
+                    app:errorEnabled="true"
+                    android:id="@+id/reg_phone_Edit_ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:backgroundTint="@color/white"
+                        android:inputType="numberDecimal"
+                        android:hint="Phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+
                     android:background="@color/white"
                     app:passwordToggleEnabled="true"
                     android:layout_marginTop="10dp"
@@ -97,25 +116,37 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:backgroundTint="#B35656"
+                    android:background="@drawable/btn"
                     android:layout_gravity="center"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:layout_marginTop="20dp"
                     android:text="Sign Up"
                     android:id="@+id/signbup_button_id"
-                    android:layout_marginBottom="100dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </Button>
 
+                <ProgressBar
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/rprogressBar"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/purple_500"
+                    />
+
                 <TextView
                     android:textColor="#1B0303"
                     android:textStyle="italic"
-                    android:textSize="25sp"
-                    android:id="@+id/signup_textview_id"
-                    android:layout_marginTop="-40dp"
+                    android:textSize="20sp"
+                    android:id="@+id/login_text_viewid"
+                    android:layout_marginTop="5dp"
                     android:text="Already Have An Account? Login"
                     android:gravity="center_horizontal"
                     android:layout_width="match_parent"
@@ -126,6 +157,7 @@
 
         </androidx.cardview.widget.CardView>
     </ScrollView>
+
 
 
 
